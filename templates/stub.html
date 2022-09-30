@@ -9,6 +9,13 @@
     <!-- Try building a new body here, bootstrap is a wise choice -->
     <html>
         <head>
+            <title>Bootstrap</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+          </head>
+
         <style>
             p {
             color: black;
@@ -50,10 +57,10 @@
           </style>
           </head>
           <body>
-    <div class="px-5 py-5 mx-auto">
-        <h1 class="text-primary"><strong><p><b>Poems</b></p></strong></h1>
+<!--    <div class="container pt-5 py-5 mx-auto">
+        <h3 class="text-primary"><strong><p><b>Poems</b></p></strong></h6>
         <p class="text-secondary"> 
-            <p>I have eaten</p>
+            <b><p>I have eaten</p></b>
             <p>the plums</p>
             <p>that were in</p> 
             <p>the icebox</p>                   
@@ -68,8 +75,52 @@
             <p>so sweet</p>
             <p>and so cold</p>
             </p>
+    </div> -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <title>Table</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+    
+    <div class="container-fluid p-3 bg-dark text-white text-center">
+      <h1>Team Members</h1>
+      <p></p> 
     </div>
-{% endblock %}
+      
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Haseeb</h3>
+          <p>Frontend Dev</p>
+          <p></p>
+        </div>
+        <div class="col-sm-4">
+          <h3>Evan</h3>
+          <p>Dev Ops</p>
+          <p></p>
+        </div>
+        <div class="col-sm-4">
+          <h3>Tirth</h3>        
+          <p>Frontend Dev Roles</p>
+          <p></p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Sharay</h3>        
+            <p>Backend Dev</p>
+            <p></p>
+          </div>
+      </div>
+    </div>
+    
+    </body>
+    </html>
+
+    {% endblock %} 
 
 <!-- This is turning off birds background from base.html -->
 {% block background %}
