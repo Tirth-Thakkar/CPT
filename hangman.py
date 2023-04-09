@@ -199,4 +199,4 @@ def hangman(difficulty):
 hangman("easy")
 
 # Call 2:
-hangman("medium")
+# hangman("medium")
