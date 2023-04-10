@@ -153,11 +153,7 @@ def hangman(difficulty):
                     print(char, end=' ')
                 print(f"\nCorrect! Your word matched the word {chosen_word}.")
                 break
-            else:
-                max_guess -= 1
-                hangman_display(max_guess, sixth)
-                print(' '.join(letter_display))
-                print(f"Incorrect. Try again you have {max_guess} guesses left.")
+
         
         # If the user inputs more than a single letter and not the specified terms wordguess or stop the user will be prompted to enter a single letter.
         # They will not have a guess deducted from their remaining incorrect guesses.
@@ -198,7 +194,7 @@ def hangman(difficulty):
 
         # If the user inputs a letter that is not in the word that was randomly chosen earlier using the choice function from the random module and the has not run out of incorrect guesses
         # the user will be shown the hangman display and the current state of the word along with the number of incorrect guesses the user has left, and one will be deducted from the remaining 
-        # incorrect guesses the user has left.
+        # incorrect guesses the user has left. If the user has guessed the word incorrectly they are also deducted here.
 
         elif letter_guess not in chosen_word:
             max_guess -= 1
