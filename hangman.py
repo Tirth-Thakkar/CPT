@@ -10,7 +10,7 @@ def hangman_display(remaining_guesses, sixth):
     # determined by the remaining guesses and what is one sixth as determined by 
     # dividing the total guesses by 6 to get the number of guesses per body part (rounded using //).
     # Each section is displayed ranging till it reaches the next section.
-    if remaining_guesses >= sixth * 6:
+    if remaining_guesses <= sixth * 6 and remaining_guesses > sixth * 5:
         print("  _______")
         print(" |/      |")
         print(" |")
@@ -19,6 +19,17 @@ def hangman_display(remaining_guesses, sixth):
         print(" |")
         print(" |")
         print("_|___")
+    
+    elif remaining_guesses >= sixth * 6:
+        print("  _______")
+        print(" |/      |")
+        print(" |")
+        print(" |")
+        print(" |")
+        print(" |")
+        print(" |")
+        print("_|___")
+
     elif remaining_guesses <= sixth * 5 and remaining_guesses > sixth * 4:
         print("  _______")
         print(" |/      |")
@@ -28,6 +39,7 @@ def hangman_display(remaining_guesses, sixth):
         print(" |")
         print(" |")
         print("_|___")
+    
     elif remaining_guesses <= sixth * 4 and remaining_guesses > sixth * 3:
         print("  _______")
         print(" |/      |")
@@ -37,6 +49,7 @@ def hangman_display(remaining_guesses, sixth):
         print(" |")
         print(" |")
         print("_|___")
+    
     elif remaining_guesses <= sixth * 3 and remaining_guesses > sixth * 2:
         print("  _______")
         print(" |/      |")
@@ -46,6 +59,7 @@ def hangman_display(remaining_guesses, sixth):
         print(" |")
         print(" |")
         print("_|___")
+    
     elif remaining_guesses <= sixth * 2 and remaining_guesses > sixth:
         print("  _______")
         print(" |/      |")
@@ -55,6 +69,7 @@ def hangman_display(remaining_guesses, sixth):
         print(" |")
         print(" |")
         print("_|___")
+    
     elif remaining_guesses <= sixth and remaining_guesses > 0:
         print("  _______")
         print(" |/      |")
@@ -64,6 +79,7 @@ def hangman_display(remaining_guesses, sixth):
         print(" |      /")
         print(" |")
         print("_|___")
+    
     elif remaining_guesses <= 0:
         print("  _______")
         print(" |/      |")
@@ -133,11 +149,14 @@ def hangman(difficulty):
             word_guess = input("Guess the word: ").strip().lower()
             if word_guess == chosen_word:
                 hangman_display(max_guess, sixth)
-                print(f"Correct! Your word matched the word {chosen_word}.")
+                for char in chosen_word:
+                    print(char, end=' ')
+                print(f"\nCorrect! Your word matched the word {chosen_word}.")
                 break
             else:
                 max_guess -= 1
                 hangman_display(max_guess, sixth)
+                print(' '.join(letter_display))
                 print(f"Incorrect. Try again you have {max_guess} guesses left.")
         
         # If the user inputs more than a single letter and not the specified terms wordguess or stop the user will be prompted to enter a single letter.
@@ -172,6 +191,7 @@ def hangman(difficulty):
         # the program will terminate and the user will be shown the word that they were trying to guess and will be indicated that they have won the game and will be shown the word.
         # This is done by using the join function to join the list letter_display into a string and then comparing it to the chosen word. 
         if chosen_word == ''.join(letter_display):
+            hangman_display(max_guess, sixth)
             print(' '.join(letter_display))
             print(f"You win! The word was {chosen_word}.")
             break
@@ -183,6 +203,7 @@ def hangman(difficulty):
         elif letter_guess not in chosen_word:
             max_guess -= 1
             hangman_display(max_guess, sixth)
+            print(' '.join(letter_display))
             print(f"Incorrect. You have {max_guess} incorrect guesses left.")
             
     # If the while loop terminates the else condition will execute and the user will be shown the hangman display and the word that they were trying to guess and will be indicated that they have lost the game.
@@ -196,7 +217,7 @@ def hangman(difficulty):
 # PROCEDURE CALLS
 
 # Call 1:
-hangman("easy")
+# hangman("easy")
 
 # Call 2:
-# hangman("medium")
+hangman("medium")
