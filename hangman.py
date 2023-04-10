@@ -143,7 +143,7 @@ def hangman(difficulty):
         letter_guess = input("Guess a letter (input 'wordguess' to guess the whole word): ").lower().strip()
         
         # If the user inputs the wordguess option the user will be prompted to enter a word guess as input and the game will check if the word is correct or not.
-        # If not correct the user will have one deducted from their remaining incorrect guess allotted to them. 
+        # If not correct the user will have one deducted from their remaining incorrect guess allotted to them the code for that is another segment.
         
         if letter_guess == "wordguess":
             word_guess = input("Guess the word: ").strip().lower()
