@@ -139,6 +139,7 @@ def hangman(difficulty):
 
     # Beginning of the game loop that will terminate when the user runs out of incorrect guesses or guesses the word correctly.
     while max_guess > 0:
+        warning = 0
         # An input is taken from the user to guess a letter or request a whole word guess option.
         letter_guess = input("Guess a letter (input 'wordguess' to guess the whole word): ").lower().strip()
         
@@ -159,6 +160,7 @@ def hangman(difficulty):
         # They will not have a guess deducted from their remaining incorrect guesses.
         elif len(letter_guess) != 1 and letter_guess != "wordguess" and letter_guess != "stop":
             print("Please enter a single letter.")
+            warning += 1
         
         # If the a single letter is inputted and is within the selected word which was randomly chosen earlier using the choice function from the random module
         # from the list of words corresponding to the difficulty the user selected the letter will be displayed in the letter display list in the position
@@ -196,7 +198,7 @@ def hangman(difficulty):
         # the user will be shown the hangman display and the current state of the word along with the number of incorrect guesses the user has left, and one will be deducted from the remaining 
         # incorrect guesses the user has left. If the user has guessed the word incorrectly they are also deducted here.
 
-        elif letter_guess not in chosen_word:
+        elif letter_guess not in chosen_word and warning == 0:
             max_guess -= 1
             hangman_display(max_guess, sixth)
             print(' '.join(letter_display))
@@ -207,7 +209,7 @@ def hangman(difficulty):
         hangman_display(max_guess, sixth)
         for char in chosen_word:
             print(char, end=' ')
-        print(f"\nGame over! The word was {chosen_word}.")
+        print(f"\nGame over! The word was {chosen_word}. YOU LOSE!")
         
 
 # PROCEDURE CALLS
