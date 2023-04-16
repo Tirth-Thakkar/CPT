@@ -104,7 +104,7 @@ def hangman(difficulty):
     else:
         # Hard mode difficulty selection, words are longer, and the user is allowed 1 more incorrect guess more than the number of letters in the word. 
         if difficulty.lower().strip() == "hard":
-            words = ['Programming', 'Algorithms', 'Cybersecurity', 'Artificial Intelligence', 'Cryptography', 'Software engineering', 'Parallel computing', 'Computational thinking', 'Machine learning', 'Information retrieval', 'Microarchitecture', 'Object oriented programming', 'Computer networking', 'Distributed systems', 'Cloud computing', 'Human-computer interaction', 'Data structures', 'Operating systems', 'Virtualization', 'Multi threading']
+            words = ["Programming", "Algorithms", "Cybersecurity", "Artificial Intelligence", "Cryptography", "Software engineering", "Parallel computing", "Computational thinking", "Machine learning", "Information retrieval", "Microarchitecture", "Object oriented programming", "Computer networking", "Distributed systems", "Cloud computing", "Human-computer interaction", "Data structures", "Operating systems", "Virtualization", "Multi threading"]
             
             # Use of the choice function from the random module link: https://docs.python.org/3/library/random.html#functions-for-sequences
             chosen_word = random.choice(words).lower().replace(" ", "").strip()
@@ -113,7 +113,7 @@ def hangman(difficulty):
 
         elif difficulty.lower().strip() == "medium":
             # Medium mode difficulty selection, words are shorter than hard but slightly longer than easy, and the user is allowed 10 more incorrect guesses more than the number of letters in the word.
-            words = ['Buffer', 'Cache', 'Kernel', 'Packet', 'Python', 'Script', 'Socket', 'Thread', 'Cookie', 'Object', 'Router', 'Server', 'Vector', 'Boolean', 'Element', 'Firefox', 'Cluster', 'Encoder', 'Firewall', 'Latency']
+            words = ["Buffer", "Cache", "Kernel", "Packet", "Python", "Script", "Socket", "Thread", "Cookie", "Object", "Router", "Server", "Vector", "Boolean", "Element", "Firefox", "Cluster", "Encoder", "Firewall", "Latency"]
             
             # Use of the choice function from the random module link: https://docs.python.org/3/library/random.html#functions-for-sequences
             chosen_word = random.choice(words).lower().replace(" ", "").strip()
@@ -122,7 +122,7 @@ def hangman(difficulty):
 
         elif difficulty.lower().strip() == "easy":
             # Easy mode difficulty selection, words are short no longer than 4 letters, and the user is allowed 15 more incorrect guesses more than the number of letters in the word.
-            words = ['Byte', 'Code', 'Loop', 'HTML', 'CSS', 'Java', 'Lisp','Ruby', 'Perl', 'PHP', 'Unix', 'SQL', 'XML', 'YAML', 'FPGA', 'CPU', 'GPU', 'IDE', 'RAID']
+            words = ["Byte", "Code", "Loop", "HTML", "CSS", "Java", "Lisp","Ruby", "Perl", "PHP", "Unix", "SQL", "XML", "YAML", "FPGA", "CPU", "GPU", "IDE", "RAID"]
             
             # Use of the choice function from the random module link: https://docs.python.org/3/library/random.html#functions-for-sequences
             chosen_word = random.choice(words).lower().replace(" ", "").strip()
@@ -215,7 +215,7 @@ def hangman(difficulty):
 # PROCEDURE CALLS
 
 # Call 1:
-# hangman("easy")
+hangman("easy")
 
 # Call 2:
-hangman("medium")
+# hangman("medium")
