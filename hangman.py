@@ -122,7 +122,7 @@ def hangman(difficulty):
 
         elif difficulty.lower().strip() == "easy":
             # Easy mode difficulty selection, words are short no longer than 4 letters, and the user is allowed 15 more incorrect guesses more than the number of letters in the word.
-            words = ["Byte", "Code", "Loop", "HTML", "CSS", "Java", "Lisp","Ruby", "Perl", "PHP", "Unix", "SQL", "XML", "YAML", "FPGA", "CPU", "GPU", "IDE", "RAID"]
+            words = ["Byte", "Code", "Loop", "HTML", "CSS", "Java", "Lisp","Ruby", "Perl", "PHP", "Unix", "SQL", "XML", "YAML", "FPGA", "CPU", "GPU", "IDE", "RAID", "Enum"]
             
             # Use of the choice function from the random module link: https://docs.python.org/3/library/random.html#functions-for-sequences
             chosen_word = random.choice(words).lower().replace(" ", "").strip()
