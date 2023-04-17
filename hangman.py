@@ -212,10 +212,12 @@ def hangman(difficulty):
         print(f"\nGame over! The word was {chosen_word}. YOU LOSE!")
         
 
-# PROCEDURE CALLS
+# PROCEDURE [CALLS
 
 # Call 1:
+print("-----------------Call 1-----------------\n")
 hangman("easy")
 
 # Call 2:
-# hangman("medium")
+print("\n-----------------Call 2-----------------\n")
+hangman("medium")
