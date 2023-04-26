@@ -1,12 +1,17 @@
 import random
 
+# The random python module is used in this program to randomly select a word based on a users topic selection. 
+# To gain further information about the random module that is used in this program please visit the documentation at https://docs.python.org/3/library/random.html
+# Specifically the choice function is used in this program to randomly select a word from a list of words to learn about this specifically here is the link to that portion of the docs: https://docs.python.org/3/library/random.html#functions-for-sequences
+# To see the source code for the random python module please visit:    
+
 def wordle(topic):
     
+    # Declaring the possible topic selection and creating the Wordle board that will be used to display the users guesses and their correctness.
     topics = ['computer', 'foods', 'colors']
     wordle_board = [['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_']]
     
     if topic.lower().strip() in topics:
-        
         if topic.lower().strip() == "computer":
             PossibleWords = ['mouse', 'nodes', 'mysql', 'swift', 'scala', 'julia', 'emacs', 'xcode', 'gnome', 'unity', 'linux', 'macos', 'opera', 'brave', 'links', 'apple']
             selected_word = random.choice(PossibleWords)
@@ -27,12 +32,13 @@ def wordle(topic):
         return
     
     runs = 0
-    flagged = False
     print("Welcome to \033[1mnot\033[0m Worldle!")
     while runs <= 4:
+        flagged = False
+        marked_indices = []
         for board in wordle_board:
             print(*board)
-        user_guess = input('Guess a 5 letter word. Enter stop to end the game').strip().lower()
+        user_guess = input('\nGuess a 5 letter word. Enter stop to end the game: ').strip().lower()
 
         if len(user_guess) == 5 and user_guess != 'stop':
             for temporary_letter_index in range(len(user_guess)):
@@ -48,8 +54,11 @@ def wordle(topic):
                 for letter_index in range(len(user_guess)):
                     if user_guess[letter_index] in selected_word and user_guess[letter_index] == selected_word[letter_index]:
                         wordle_board[runs][letter_index] = '\033[1m' + user_guess[letter_index] + '\033[0m' 
-                    elif user_guess[letter_index] in selected_word and user_guess[letter_index] != selected_word[letter_index]:
+                        marked_indices.append(letter_index)
+
+                    elif user_guess[letter_index] in selected_word and user_guess[letter_index] != selected_word[letter_index] and letter_index not in marked_indices:
                         wordle_board[runs][letter_index] = '\033[3m' + user_guess[letter_index] + '\033[0m'
+                        marked_indices.append(letter_index)
         
         elif user_guess == 'stop':
             print(f'You have stopped the game. The correct word was {selected_word}')
@@ -62,6 +71,9 @@ def wordle(topic):
             runs += 1
 
     if runs == 5:
+        for board in wordle_board:
+            print(*board)
         print(f'You lost the game the correct word was {selected_word}')
+
 wordle('foods')
 
