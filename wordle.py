@@ -11,19 +11,33 @@ def wordle(topic):
     topics = ['computer', 'foods', 'colors']
     wordle_board = [['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_']]
     
+    
     if topic.lower().strip() in topics:
         if topic.lower().strip() == "computer":
+            
+            # Computer topic selection if the user selected the topic as computer only words that are computer related can be selected as the answer.
             PossibleWords = ['mouse', 'nodes', 'mysql', 'swift', 'scala', 'julia', 'emacs', 'xcode', 'gnome', 'unity', 'linux', 'macos', 'opera', 'brave', 'links', 'apple']
+            
+            # Choice Function from the random module is used below: https://docs.python.org/3/library/random.html#functions-for-sequences
             selected_word = random.choice(PossibleWords)
             print('You have chosen the topic: Computer')
-        
+    
         elif topic.lower().strip() == 'foods':
+            
+            # Food topic selection if the selected user topic is foods only words that are food related can be selected as the answer.
             PossibleWords = ['gouda', 'swiss', 'cream', 'bagel', 'dough', 'colby', 'comte', 'kefir', 'bread', 'pizza', 'onion', 'salad', 'sushi', 'soups', 'sugar', 'pasta']
+            
+            # Choice function from the random module is used below: https://docs.python.org/3/library/random.html#functions-for-sequences
             selected_word = random.choice(PossibleWords)
             print('You have chosen the topic: Foods')
         
+        
         elif topic.lower().strip() == 'flowers': 
+            
+            # Flower topic if the user chooses flowers as their topic only a flower word may be selected as the answer. 
             PossibleWords = ['roses', 'daisy', 'tulip', 'lilac', 'lilly', 'peony', 'orchid', 'poppy', 'lotus', 'aster', 'canna', 'holly', 'pansy', 'petal', 'bloom', 'viola']
+            
+            # Choice function from the random module is used below: https://docs.python.org/3/library/random.html#functions-for-sequences
             selected_word = random.choice(PossibleWords)
             print('You have chosen the topic: Flowers')
     else: 
