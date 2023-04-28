@@ -8,7 +8,7 @@ import random
 def wordle(topic):
     
     # Declaring the possible topic selection and creating the Wordle board that will be used to display the users guesses and their correctness.
-    topics = ['computer', 'foods', 'colors']
+    topics = ['computer', 'foods', 'flowers']
     wordle_board = [['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_'], ['_','_','_','_','_']]
     
     
@@ -116,14 +116,20 @@ def wordle(topic):
             print('You have not entered a 5 letter word.')
             flagged = True
         
-        # If the run 
+        # If the run is flagged the if block will prevent the runs from being incremented and the user from being penalized
         if not flagged: 
             runs += 1
-
+    
+    # If the user has reached their 5th turn and has not guessed the word the program will display the board with the correct word
+    # and a message informing the user that they have lost the game
     if runs == 5:
         for board in wordle_board:
             print(*board)
         print(f'You lost the game the correct word was {selected_word}')
 
+# Function Calls
+print('--------------Call 1--------------\n')
 wordle('foods')
 
+print('\n--------------Call 2--------------\n')
+wordle('flowers')
