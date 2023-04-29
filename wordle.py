@@ -35,7 +35,7 @@ def wordle(topic):
         elif topic.lower().strip() == 'flowers': 
             
             # Flower topic if the user chooses flowers as their topic only a flower word may be selected as the answer. 
-            PossibleWords = ['roses', 'daisy', 'tulip', 'lilac', 'lilly', 'peony', 'orchid', 'poppy', 'lotus', 'aster', 'canna', 'holly', 'pansy', 'petal', 'bloom', 'viola']
+            PossibleWords = ['roses', 'daisy', 'tulip', 'lilac', 'lilly', 'peony', 'poppy', 'lotus', 'aster', 'canna', 'holly', 'pansy', 'petal', 'bloom', 'viola', 'oxlip']
             
             # Choice function from the random module is used below: https://docs.python.org/3/library/random.html#functions-for-sequences
             selected_word = random.choice(PossibleWords)
