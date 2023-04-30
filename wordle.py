@@ -62,10 +62,10 @@ def wordle(topic):
         
         # Use input to allow the user to able to input a new word per turn
         user_guess = input('\nGuess a 5 letter word. Enter stop to end the game: ').strip().lower()
-
+        
         # If the input is valid by being 5 letters long and not terminating the game with stop 
         # The program will begin checking the user's input for correctness
-        if len(user_guess) == 5 and user_guess != 'stop':
+        if len(user_guess) == 5 and user_guess != 'stop' and user_guess in PossibleWords:
             
             # For loop that will iterate through the range represented by the length of the user's guess
             for temporary_letter_index in range(len(user_guess)):
@@ -89,7 +89,7 @@ def wordle(topic):
                 break
             
             # If the user's guess does not perfectly match the selected word the program will perform additional checks
-            elif user_guess != selected_word:
+            elif user_guess != selected_word and user_guess in PossibleWords:
                 
                 # For every corresponding index in the range created by the length of the user's guess
                 for letter_index in range(len(user_guess)):
@@ -113,7 +113,7 @@ def wordle(topic):
         # If the user's input not 5 letters long then the program will set the flagged boolean value to true 
         # preventing the user from losing a turn and the runs variable from being incremented 
         else:
-            print('You have not entered a 5 letter word.')
+            print('You have not entered a 5 letter word. Or not in the word bank for your topic.')
             flagged = True
         
         # If the run is flagged the if block will prevent the runs from being incremented and the user from being penalized
