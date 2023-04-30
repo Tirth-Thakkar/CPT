@@ -2,8 +2,9 @@ import random
 
 # The random python module is used in this program to randomly select a word based on a users topic selection. 
 # To gain further information about the random module that is used in this program please visit the documentation at https://docs.python.org/3/library/random.html
-# Specifically the choice function is used in this program to randomly select a word from a list of words to learn about this specifically here is the link to that portion of the docs: https://docs.python.org/3/library/random.html#functions-for-sequences
-# To see the source code for the random python module please visit:    
+# Specifically the choice function is used in this program to randomly select a word from a list of words to learn about this specifically here is the link to that 
+# portion of the docs: https://docs.python.org/3/library/random.html#functions-for-sequences
+# To see the source code for the random python module please visit: https://github.com/python/cpython/blob/3.11/Lib/random.py
 
 def wordle(topic):
     
